@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --corPrincipal: #22D4FD;
+    --corSecundaria: #000;
+    --corTerciaria: #F6F6F6;
+
+    --fontePrincipal: "Montserrat", sans-serif;
+    --fonteSecundaria: "Krona One", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* MUDANÇA: Colocado no * para aplicar a todos os elementos e evitar estouro de largura */
+}
+
+body {
+    background-color: var(--corSecundaria);
+    color: var(--corTerciaria);
+}
+
+header {
+    background-color: var(--corSecundaria);
+    padding: 2% 15%;
+}
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cabecalho-nav {
+    display: flex;
+    gap: 32px;
+}
+
+.cabecalho-link {
+    color: var(--corPrincipal);
+    font-family: var(--fontePrincipal);
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.cabecalho-logo {
+    height: 60px;
+    width: auto;
+
+
+}
+
+main {
+    padding: 5% 15%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 82px;
+}
+
+.container-texto {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.container-texto-titulo {
+    font-family: var(--fonteSecundaria);
+    color: var(--corTerciaria);
+}
+
+.projeto-prototipo {
+    font-family: var(--fontePrincipal);
+    color: var(--corPrincipal);
+}
+
+.projeto-titulo {
+    font-family: var(--fontePrincipal);
+}
+
+.container-titulo-destaque {
+    color: var(--corPrincipal);
+}
+
+.container-texto-paragrafo {
+    font-family: var(--fontePrincipal);
+    color: var(--corTerciaria);
+    font-size: 16px;
+    font-weight: 400;
+    /* MUDANÇA: Corrigido de 1 para 400 (peso normal do font-weight) */
+    text-align: left;
+}
+
+/* MUDANÇA: Div PAI dos botões ajustada para mantê-los lado a lado no Desktop */
+.container-texto-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 32px;
+}
+
+/* MUDANÇA: Estilo dos botões <a> restaurado e aprimorado */
+.container-texto-link {
+    background-color: var(--corPrincipal);
+    border: solid 2px var(--corPrincipal);
+    border-radius: 16px;
+    padding: 16px 32px;
+    /* MUDANÇA: Reduzido levemente o padding para caber melhor no layout */
+    color: var(--corSecundaria);
+    font-size: 20px;
+    font-family: var(--fontePrincipal);
+    font-weight: 600;
+    text-decoration: none;
+    /* MUDANÇA: Adicionado para remover o sublinhado padrão dos links */
+    display: inline-block;
+    text-align: center;
+    transition: 0.3s;
+}
+
+/* MUDANÇA: Adicionado efeito hover nos botões */
+.container-texto-link:hover {
+    background-color: transparent;
+    color: var(--corPrincipal);
+}
+
+.container-foto {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 0 / 1;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+footer {
+    color: var(--corSecundaria);
+    background-color: var(--corPrincipal);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fontePrincipal);
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+/* ===================================================
+   RESPONSIVIDADE (MOBILE / TABLET)
+   =================================================== */
+
+/* MUDANÇA: Unificado todos os @media antigos em uma única regra limpa para telas de até 768px */
+@media (max-width: 768px) {
+    header {
+        padding: 5% 0;
+    }
+
+    .cabecalho {
+        justify-content: center;
+        gap: 40px;
+    }
+
+    main {
+        flex-direction: column-reverse;
+        /* Coloca a imagem no topo e o texto abaixo no mobile */
+        padding: 10% 5%;
+        gap: 40px;
+    }
+
+    .container-texto {
+        width: 100%;
+        text-align: center;
+        gap: 24px;
+    }
+
+    .container-foto {
+        width: 100%;
+    }
+
+    .container-foto img {
+        max-width: 220px;
+        /* Garante tamanho ideal para foto de perfil no celular */
+    }
+
+    .container-texto-titulo {
+        font-size: 22px;
+    }
+
+    .container-texto-paragrafo {
+        font-size: 14px;
+    }
+
+    /* MUDANÇA: Empilha os botões na vertical no celular */
+    .container-texto-botoes {
+        display: flex;
+        flex-direction: column;
+        /* Coloca um botão abaixo do outro */
+        gap: 16px;
+        /* Ajuste o espaçamento como preferir */
+        align-items: center;
+    }
+
+    /* MUDANÇA: Botões ocupam a largura total do container no celular */
+    .container-texto-link {
+        width: 100%;
+        max-width: 280px;
+        padding: 14px 0;
+        font-size: 18px;
+    }
+
+    footer {
+        color: var(--corSecundaria);
+        background-color: var(--corPrincipal);
+        text-align: center;
+        font-family: var(--fontePrincipal);
+        width: 100%;
+        padding: 15px 0;
+    }
+}
+
+/* Card do Projeto */
+.projeto-card {
+    display: flex;
+    align-items: center;
+    background-color: var(--corSecundaria);
+    border: 2px solid var(--corPrincipal);
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 20px;
+    gap: 20px;
+    max-width: 600px;
+}
+
+/* Imagem no lado esquerdo */
+.projeto-card-img {
+    width: 150px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Textos e botão no lado direito */
+.projeto-card-conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.projeto-card-titulo {
+    color: var(--corTerciaria);
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.projeto-card-descricao {
+    color: var(--corTerciaria);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.projeto-card-link {
+    background-color: var(--corPrincipal);
+    border: solid 2px var(--corPrincipal);
+    border-radius: 16px;
+    padding: 5px 10px;
+    /* MUDANÇA: Reduzido levemente o padding para caber melhor no layout */
+    color: var(--corSecundaria);
+    font-size: 16px;
+    font-family: var(--fontePrincipal);
+    font-weight: 600;
+    text-decoration: none;
+    /* MUDANÇA: Adicionado para remover o sublinhado padrão dos links */
+    display: inline-block;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.projeto-card-link:hover {
+    background-color: transparent;
+    color: var(--corPrincipal);
+}
